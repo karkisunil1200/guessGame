@@ -1,17 +1,27 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ImageBackground } from "react-native";
 import StartGameScreen from "./screens/StartGameScreen";
 
 export default function App() {
   return (
     <View style={styles.rootScreen}>
-      <StartGameScreen />
+      <ImageBackground
+        source={require("./assets/images/dice.jpg")}
+        resizeMode="cover"
+        style={styles.rootScreen}
+        imageStyle={styles.backgroundImage}
+      >
+        <StartGameScreen />
+      </ImageBackground>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   rootScreen: {
-    backgroundColor: "#ddb52f",
     flex: 1,
+    backgroundColor: "#d2da5c",
+  },
+  backgroundImage: {
+    opacity: 0.15,
   },
 });
